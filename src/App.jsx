@@ -16,8 +16,8 @@ class App extends Component {
         let searchItemCopy = [...this.state.searchItem];
         searchItemCopy.push({
             lyrics: searchItem.lyrics,
-            artist: searchItem.artist,
-            album: searchItem.album,
+           // artist: searchItem.artist,
+           // album: searchItem.album,
         });
         this.setState({
             searchItem: searchItemCopy,

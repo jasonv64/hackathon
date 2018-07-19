@@ -21,7 +21,7 @@ class OutPut extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=' + this.props.searchItem[0].lyrics + '&apikey=' + this.state.musixmatchApi)
+        axios.get('https://api.musixmatch.com/ws/1.1/track.search?q_lyrics=' + this.props.searchItem[0].lyrics + '&apikey=' + this.state.musixmatchApi)
             .then((Response) => {
                 this.setState({
                     trackInfo: Response.data.message.body.track_list
@@ -32,7 +32,7 @@ class OutPut extends Component {
                     trackName: this.state.trackInfo[this.state.index].track.track_name
                 });
                 this.setState({ trackId: this.state.trackInfo[this.state.index].track.track_id })
-                axios.get('http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=' + this.state.trackId + '&apikey=' + this.state.musixmatchApi)
+                axios.get('https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=' + this.state.trackId + '&apikey=' + this.state.musixmatchApi)
                     .then((lyrics) => {
                         this.setState({ lyricsOutPut: lyrics.data.message.body.lyrics.lyrics_body });
 
