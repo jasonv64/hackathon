@@ -69,7 +69,7 @@ class OutPut extends Component {
             button = <a href={this.state.url} className="button button3 btn">Tickets!</a>
         }
         return (
-            <div className="container col-md-6">
+            <div className="container">
                 <div className="artist-display">
                     {this.state.artistName}
                 </div>
